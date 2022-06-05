@@ -1,4 +1,4 @@
-import { getProviders } from "next-auth/react";
+import { getProviders, signIn } from "next-auth/react";
 import React from "react";
 
 function Login({ providers }) {
@@ -8,7 +8,10 @@ function Login({ providers }) {
       <img className="w-96 mb-5" src="spotify-icon.png" alt="" />
       {Object.values(providers).map((provider) => (
         <div key={provider.name}>
-          <button className="bg-[#18D360] rounded p-5 text-white">
+          <button
+            className="bg-[#18D360] rounded p-5 text-white"
+            onClick={() => signIn(provider.id, { callbackUrl: "/" })}
+          >
             login with {provider.name}
           </button>
         </div>
