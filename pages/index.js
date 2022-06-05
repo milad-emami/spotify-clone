@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Center from "../components/Center";
 import Sidebar from "../components/Sidebar";
 import styles from "../styles/Home.module.css";
 
@@ -10,9 +11,9 @@ export default function Home() {
         <title>Spotify</title>
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <main>
+      <main className="flex">
         <Sidebar />
-        {/* center */}
+        <Center />
       </main>
       <div>{/* player */}</div>
     </div>
